@@ -17,3 +17,6 @@ This project deals with the task of automated cell counting in microscopy using 
 8. RESULTS
 9. CONCLUSION
 10.REFERENCES
+
+## ABSTRACT:
+This project deals with the task of automated cell counting in microscopy. The approach we take is to use Convolutional Neural Networks (CNNs) to regress a cell spatial density across the image. This is applicable to situations where traditional single-cell segmentation-based methods do not work well due to cell clumping or overlap. We make the following contributions: (i) We implement two Fully Convolutional Regression Networks (FCRNs) for this task in Keras with Tensorflow backend, we follow the architecture given in [1]; (ii) We fine-tune our model to get more accuracy than what is obtained in [1]; (iii) We compare the results of our architecture which uses density based method to results obtained by an U-Net which uses a segmentation-based approach (iv) We show that FCRNs trained entirely on synthetic data are able to give excellent predictions on real microscopy images. We set a new state-of-the-art performance for cell counting on standard synthetic image benchmarks and, as a side benefit, show the potential of the FCRNs for providing cell detections for overlapping cells
