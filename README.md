@@ -31,4 +31,5 @@ In this project, we focus on cell counting in microscopy, but the developed meth
 
 ## METHODOLOGY:
 In our project, we develop and compare the architecture of two Fully Convolutional Regression Networks (FCRNs) A and B along with UNet which is a Convolutional Network used extensively for Biomedical Image Segmentation. The networks being fully convolutional, they can predict the density map of an input image of arbitrary size. We use this property of fully convolutional networks to improve the efficiency by training end-to-end on image patches. In this project we use synthetic data to train our model. 
+![pic1](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/pic1.JPG)
 
