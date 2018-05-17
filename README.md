@@ -44,7 +44,7 @@ The density functions in our approaches are real-valued functions over pixel gri
                             ∀p ∈ I_i   F_i^0 (p)= ∑_(P∈P_i)N(p;P,σ^2 I_2x2)                  (1)
 In the above equation p denotes a pixel and N(p;P,σ^2 I_2x2) denotes  a normalized 2D Gaussian kernel evaluated at p, with the mean at the user-placed dot P , and an isotropic covariance matrix with σ being a small value (typically, a few pixels). With this definition, the sum of the ground truth density over the entire image will not match the dot count Ci exactly, as dots that lie very close to the image boundary result in their Gaussian probability mass being partly outside the image. This is a natural and desirable behavior for most applications, as in many cases an object that lies partly outside the image boundary should not be counted as a full object, but rather as a fraction of an object.
 Given a set of training images together with their ground truth densities, we aim to learn the linear transformation of the feature representation that approximates the density function at each pixel:
-                                          ∀p ∈ I_i     F_i (p│c)=c^T x_p^i                               (2)
+                            ∀p ∈ I_i     F_i (p│c)=c^T x_p^i                               (2)
 
 Where cER^K    is the parameter vector of the linear transform that we aim to learn from the training data, and F_i (.│c)  is the estimate of the density function for a particular value of c. The regularized risk framework then suggests choosing c so that it minimizes the sum of the mismatches between the ground truth and the estimated density functions (the loss function) under regularization:
 
