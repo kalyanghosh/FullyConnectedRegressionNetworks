@@ -38,10 +38,18 @@ In our project, we develop and compare the architecture of two Fully Convolution
 ![pic2](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/pic2.JPG)
 
 ## MATHEMATICAL FORMULATIONS:
-We assume that a set of N training images (pixel grids) I_1,I_2, …., I_N is given. It is also assumed that each pixel p in each image I_i is associated with a real-valued feature vector x_p^iR^K. It is finally assumed that each training image I_i is annotated with a set of 2D points P_i = {P_1, …., P_(C(i))}, where C(i) is the total number of objects annotated by the user.
+We assume that a set of N training images (pixel grids) I_1,I_2, …., I_N is given. It is also assumed that each pixel p in each image I_i is associated with a real-valued feature vector x_p^iER^K. It is finally assumed that each training image I_i is annotated with a set of 2D points P_i = {P_1, …., P_(C(i))}, where C(i) is the total number of objects annotated by the user.
 The density functions in our approaches are real-valued functions over pixel grids, whose integrals over image regions should match the object counts. For a training image I_i , we define the ground truth density function to be a kernel density estimate based on the provided points:
 
                             ∀p ∈ I_i   F_i^0 (p)= ∑_(P∈P_i)N(p;P,σ^2 I_2x2)                  (1)
+In the above equation p denotes a pixel and N(p;P,σ^2 I_2x2) denotes  a normalized 2D Gaussian kernel evaluated at p, with the mean at the user-placed dot P , and an isotropic covariance matrix with σ being a small value (typically, a few pixels). With this definition, the sum of the ground truth density over the entire image will not match the dot count Ci exactly, as dots that lie very close to the image boundary result in their Gaussian probability mass being partly outside the image. This is a natural and desirable behavior for most applications, as in many cases an object that lies partly outside the image boundary should not be counted as a full object, but rather as a fraction of an object.
+Given a set of training images together with their ground truth densities, we aim to learn the linear transformation of the feature representation that approximates the density function at each pixel:
+                                          ∀p ∈ I_i     F_i (p│c)=c^T x_p^i                               (2)
+
+Where cER^K    is the parameter vector of the linear transform that we aim to learn from the training data, and F_i (.│c)  is the estimate of the density function for a particular value of c. The regularized risk framework then suggests choosing c so that it minimizes the sum of the mismatches between the ground truth and the estimated density functions (the loss function) under regularization:
+
+                     c=argmin(c^T c+λ*∑_(i=1)to N D(F_i^0 (.),F_i (.│c)))            (3)
+
 
 
 
