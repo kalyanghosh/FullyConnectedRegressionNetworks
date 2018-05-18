@@ -51,6 +51,14 @@ Where cER^K    is the parameter vector of the linear transform that we aim to le
 
                      c=argmin(c^T c+λ*∑_(i=1)to N D(F_i^0 (.),F_i (.│c)))            (3)
 
+## MESA DISTANCE:
+
+Given an image I, the MESA distance DMESA between two functions F1(p) and F2(p) on the pixel grid is defined as the largest absolute difference between sums of F1(p) and F2(p) over all box subarrays in I:
+
+      D_MESA (F_1,F_2 )=max⁡(max_(B∈B) (∑_(p∈Pa)F_1(p)-F_2(p)),max_(B∈B) (∑_(p∈P)F_2(p)-F_1(p)))   (4)
+
+Here, B is the set of all box subarrays of I. The MESA distance (in fact, a metric) can be regarded as an L distance between combinatorically-long vectors of subarray sums. In the 1D case, it is related to the Kolmogorov-Smirnov distance between probability distributions (in our terminology, the Kolmogorov-Smirnov distance is the maximum of absolute differences over the subarrays with one corner fixed at top-left; thus, the strict subset of B is considered in the Kolmogorov-Smirnov case).
+
 
 
 
