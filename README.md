@@ -66,5 +66,5 @@ We only use small kernels of size 3x3 or 5x5 pixels. The number of feature maps 
 
 ![pic3](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Architecture.JPG)
 
-
+![pic4](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Table.JPG)
 
