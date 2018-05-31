@@ -68,3 +68,5 @@ We only use small kernels of size 3x3 or 5x5 pixels. The number of feature maps 
 
 ![pic4](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Table.JPG)
 
+In the above table D and K refer to input Dimension and K is the kernel size. For example, 32,3,3 says the input dimension is 32x32 and kernel size is 3,3.MP denotes max-pooling. As can be seen from the architecture FCRN-A has 7 blocks while FCRN-B has 6 blocks. For FCRN-A the block 1 has the inputs 32,3,3 and Max Pooling is 2x2 as the input image has size 100x100 while block 1 has the size 50x50. Similarly, input parameters for block 2 are 64,3,3 and Max-Pooling is 2x2 as block 1 has size 50x50 whereas block 2 has size 25x25. We take appropriate input parameters for other blocks as described in the above rule. For block 6, we first perform up sampling by 2x2 as block 5 has size 25x25 whereas block 6 has size 50x50. We do the same for block 7. A similar approach was taken to code the architecture of FCRN-B.
+
