@@ -78,3 +78,11 @@ Real data: We evaluated FCRN-A and FCRN-B on two data sets; (1) retinal pigment 
 The implementations are based on MatConvNet. Back-propagation and stochastic gradient descent are used for optimization. During training, we cut large images into patches, for instance, we randomly sample 500 small patches of size 100x100 from 500x 500 images. The amount of data for training has been increased dramatically in this way. Each patch is normalized by subtracting its own mean value and then dividing by the standard deviation. The parameters of the convolution kernels are initialized with an orthogonal basis. Then the parameters c are updated by:
                                                Δc(t+1)=β*Δct+(1-β)*α*∂l/∂c                                                  (5)
 In the above equation α is the learning rate, and β is the momentum parameter
+
+## RESULTS:
+
+RESULTS
+
+The results obtained from our simulations of FCRN-A, FCRN-B and UNet are shown below. In the tables that follow, the error rate is the absolute difference between the actual count of cells in the image and the predicted count from the 3 architectures.
+
+![pic5](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Results1.JPG)
