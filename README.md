@@ -86,3 +86,4 @@ RESULTS
 The results obtained from our simulations of FCRN-A, FCRN-B and UNet are shown below. In the tables that follow, the error rate is the absolute difference between the actual count of cells in the image and the predicted count from the 3 architectures.
 
 ![pic5](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Results1.JPG)
+![pic6](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Results2.JPG)
