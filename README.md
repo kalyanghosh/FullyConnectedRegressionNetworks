@@ -81,9 +81,11 @@ In the above equation α is the learning rate, and β is the momentum parameter
 
 ## RESULTS:
 
-RESULTS
-
 The results obtained from our simulations of FCRN-A, FCRN-B and UNet are shown below. In the tables that follow, the error rate is the absolute difference between the actual count of cells in the image and the predicted count from the 3 architectures.
 
 ![pic5](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Results1.JPG)
 ![pic6](https://github.com/kalyanghosh/Cell_Counting_using_FCRNs/blob/master/Results2.JPG)
+
+## CONCLUSIONS:
+
+In this project we implemented the FCRN-A and B, which was originally written in MATLAB, in Keras with TensorFlow. We were also able to improve the performance for cell counting from the original paper by fine-tuning the model and using He-normal initialization and also show the potential of the FCRNs for providing cell detections for overlapping cells. It was found that the error rate for the traditional UNet is comparable to that of the FCRN-A and B but the run time of the new FCRN is less than half of that of the UNet. This shows that the FCRNs have a huge potential to be used for cell counting in Bio-Medical Applications. 
